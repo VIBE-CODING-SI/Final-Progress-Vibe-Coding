@@ -1,0 +1,41 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-visible {
+  transform: translateY(0);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-transparent {
+  background-color: transparent;
+}
+
+.hover-underline-animation {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+  }
+
+.hover-underline-animation::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #3b82f6, #06b6d4);
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease;
+    border-radius: 0.25rem;
+  }
+
+.group:hover .hover-underline-animation::before {
+    transform: scaleY(1);
+}
